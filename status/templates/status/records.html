@@ -1,0 +1,18 @@
+{% if records %}
+	<table>
+	<tr>
+		<th>Record Number</th>
+		<th>Status</th>
+		<th>Notes</th>
+	</tr>
+	{% for r in records %}
+	<tr>
+		<th>{{r.court_record_number}}</th>
+		<th>{{r.status}}</th>
+		<th>{{r.notes}}</th>
+	</tr>
+	{% endfor %}
+	</table>
+	{% else %}
+	<p>You have no records to display.</p>
+	{% endif %}

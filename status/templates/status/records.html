@@ -1,18 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
 {% if records %}
-	<table>
-	<tr>
-		<th>Record Number</th>
-		<th>Status</th>
-		<th>Notes</th>
-	</tr>
-	{% for r in records %}
-	<tr>
-		<th>{{r.court_record_number}}</th>
-		<th>{{r.status}}</th>
-		<th>{{r.notes}}</th>
-	</tr>
+	<table class="table">
+	<thead>
+		<tr>
+			<th>Record Number</th>
+			<th>Status</th>
+			<th>Notes</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for r in records %}
+		<tr>
+			<th>{{r.court_record_number}}</th>
+			<th>{{r.status}}</th>
+			<th>{{r.notes}}</th>
+		</tr>
+	</tbody>
 	{% endfor %}
 	</table>
 	{% else %}
 	<p>You have no records to display.</p>
 	{% endif %}
+	
+{% endblock %}
